@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Windows-MCP Dashboard</title>
+<style>
+:root{--bg:#f6f7f6;--fg:#1d2524;--mut:#5d6b69;--card:#fff;--line:#d9dfde;--acc:#0f766e;--code:#eef2f1}
+@media (prefers-color-scheme:dark){:root{--bg:#121716;--fg:#e4eceb;--mut:#9fb0ad;--card:#1a2120;--line:#2d3836;--acc:#2dd4bf;--code:#232c2b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 "Segoe UI",system-ui,sans-serif}
+header{padding:20px max(16px,4vw);border-bottom:1px solid var(--line);background:var(--card)}
+header h1{margin:0;font-size:22px}header p{margin:4px 0 0;color:var(--mut);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:20px max(16px,4vw)}
+section{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:0 0 16px;overflow-x:auto}
+h2{margin:0 0 8px;font-size:17px;color:var(--acc)}h3{font-size:15px;margin:12px 0 4px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}th{background:var(--code)}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font:13px Consolas,monospace}a{color:var(--acc)}
+ul{margin:4px 0 4px 20px;padding:0}p{margin:6px 0}
+</style></head><body>
+<header><h1>Windows-MCP</h1><p>Dashboard built from ProjectInfo.md on 2026-11-03. Edit ProjectInfo.md, then re-run the builder.</p></header>
+<main id="out"></main>
+<script id="src" type="text/plain"># Windows-MCP - Project Info
+
+**Folder:** `E:\Dev\Windows-MCP`
+**Repository:** [https://github.com/FriesianLogic/Windows-MCP.git](https://github.com/FriesianLogic/Windows-MCP.git) (GitHub repos under FriesianLogic are private unless noted)
+**Visibility:** Public fork (confirmed via GitHub)
+**Last updated:** 2026-11-03 (draft generated from the folder; review and correct)
+
+## Summary
+- This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+- ## Project Overview
+- Windows-MCP is a Python MCP (Model Context Protocol) server that bridges AI LLM agents with the Windows OS, enabling direct desktop automation. It exposes 16 tools (App, Shell, Screenshot, Snapshot, Click, Type, Scroll, Move, Shortcut, Wait, Scrape, MultiSelect, MultiEdit, Clipboard, Process, Notifi
+- ## Build & Development Commands
+- ```bash
+- uv sync                    # Install dependencies
+- Source: CLAUDE.md
+
+## Facts found in the folder
+| Item | Value |
+|---|---|
+| Files (depth 3, build folders ignored) | 140 |
+| Main file types | .py (93), .md (20), .log (5), .txt (5), .png (4), .yml (4) |
+| Most recent file change | 2026-10-31 |
+| Latest commit | 2026-07-06 - chore: nightly check-in 2026-07-06 |
+| Top-level folders | .claude, .github, .remember, .tau, assets, docs, node_modules, src, tests |
+| Top-level files | .gitignore, .mcpbignore, CLAUDE.md, Commands.md, CONTRIBUTING.md, Features.md, Goals.md, LICENSE.md, manifest.json, pyproject.toml, README.md, SECURITY.md, server.json, Specifications.md, TestCases.md |
+
+## Status
+- Not yet recorded. Fill in version, deployment and next steps here.
+
+## Key Decisions
+- (none recorded yet)
+</script>
+<script>
+(function(){
+var src=document.getElementById("src").textContent;
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function inl(s){s=esc(s);
+ s=s.replace(/`([^`]+)`/g,"<code>$1</code>");
+ s=s.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>");
+ s=s.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+ s=s.replace(/(^|[\s(])(https?:\/\/[^\s)<]+)/g,'$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>');
+ return s}
+var L=src.split(/\r?\n/),out=[],sec=null,i=0,ul=false;
+function close(){if(ul){out.push("</ul>");ul=false}if(sec){out.push("</section>");sec=null}}
+function open(t){close();sec=true;out.push("<section>"+(t?"<h2>"+inl(t)+"</h2>":""))}
+open("");
+while(i<L.length){var l=L[i];
+ if(/^# /.test(l)){i++;continue}
+ if(/^## /.test(l)){open(l.slice(3));i++;continue}
+ if(/^### /.test(l)){if(ul){out.push("</ul>");ul=false}out.push("<h3>"+inl(l.slice(4))+"</h3>");i++;continue}
+ if(/^\s*\|/.test(l)&&i+1<L.length&&/^\s*\|[\s:|-]+\|\s*$/.test(L[i+1])){
+  var h=l.trim().replace(/^\||\|$/g,"").split("|");var t="<table><tr>"+h.map(function(c){return"<th>"+inl(c.trim())+"</th>"}).join("")+"</tr>";i+=2;
+  while(i<L.length&&/^\s*\|/.test(L[i])){t+="<tr>"+L[i].trim().replace(/^\||\|$/g,"").split("|").map(function(c){return"<td>"+inl(c.trim())+"</td>"}).join("")+"</tr>";i++}
+  out.push(t+"</table>");continue}
+ if(/^\s*[-*] /.test(l)){if(!ul){out.push("<ul>");ul=true}out.push("<li>"+inl(l.replace(/^\s*[-*] /,""))+"</li>");i++;continue}
+ if(ul){out.push("</ul>");ul=false}
+ if(l.trim())out.push("<p>"+inl(l)+"</p>");i++}
+close();document.getElementById("out").innerHTML=out.join("\n");
+})();
+</script></body></html>
