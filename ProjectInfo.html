@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Windows-MCP - Project Info</title><style>
+:root{--bg:#f6f7fb;--fg:#1c2230;--mut:#5f6b82;--card:#fff;--bd:#d9deea;--ac:#2f6df6;--hd:#eef1f8}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1420;--fg:#e4e9f5;--mut:#93a0ba;--card:#171e2e;--bd:#2a3550;--ac:#6ea0ff;--hd:#1d2640}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:14px/1.55 system-ui,Segoe UI,sans-serif;background:var(--bg);color:var(--fg)}
+.wrap{display:flex;min-height:100vh}
+nav{width:270px;flex:none;position:sticky;top:0;height:100vh;overflow:auto;padding:16px 12px;border-right:1px solid var(--bd);background:var(--card)}
+nav h2{font-size:13px;margin:0 0 8px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+nav a{display:block;padding:3px 8px;border-radius:6px;color:var(--fg);text-decoration:none;font-size:13px}
+nav a:hover{background:var(--hd)}nav a.l2{padding-left:20px;color:var(--mut)}nav a.l3{padding-left:32px;color:var(--mut);font-size:12px}
+main{flex:1;min-width:0;padding:20px 28px 60px;max-width:1500px}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0 12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar input{flex:1;min-width:220px;padding:8px 12px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--fg);font:inherit}
+.bar span{color:var(--mut);font-size:12px}
+h1{font-size:24px;margin:6px 0 10px}h2{font-size:19px;margin:30px 0 8px;padding-top:6px;border-top:1px solid var(--bd)}h3{font-size:16px;margin:22px 0 6px}
+.tw{overflow:auto;border:1px solid var(--bd);border-radius:10px;background:var(--card);margin:8px 0 16px;max-height:70vh}
+table.dt{border-collapse:collapse;width:100%;font-size:13px}
+.dt th{position:sticky;top:0;background:var(--hd);text-align:left;padding:7px 10px;border-bottom:1px solid var(--bd);cursor:pointer;white-space:nowrap;user-select:none}
+.dt td{padding:6px 10px;border-bottom:1px solid var(--bd);vertical-align:top}
+.dt tr:hover td{background:var(--hd)}
+code{font:12px/1.4 Consolas,monospace;background:var(--hd);padding:1px 5px;border-radius:4px}
+pre{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:10px;overflow:auto}
+a{color:var(--ac)}blockquote{margin:8px 0;padding:6px 12px;border-left:3px solid var(--ac);background:var(--hd);border-radius:0 8px 8px 0}
+.hide{display:none}.foot{color:var(--mut);font-size:12px;margin-top:30px}
+.embed nav{display:none}.embed main{padding:12px 16px 40px}
+@media(max-width:800px){nav{display:none}main{padding:12px}}
+</style></head><body><div class="wrap"><nav><h2>Contents</h2><a class="l1" href="#windows-mcp-project-info">Windows-MCP - Project Info</a><a class="l2" href="#summary">Summary</a><a class="l2" href="#facts-found-in-the-folder">Facts found in the folder</a><a class="l2" href="#status">Status</a><a class="l2" href="#key-decisions">Key Decisions</a><a class="l2" href="#web-and-cloud-services-auto-cataloged-2026-11-08">Web and cloud services (auto-cataloged 2026-11-08)</a><a class="l2" href="#setup-requirements-auto-detected-2026-11-08">Setup requirements (auto-detected 2026-11-08)</a></nav><main><div class="bar"><input id="q" type="search" placeholder="Filter tables"><span id="cnt"></span></div><h1 id="windows-mcp-project-info">Windows-MCP - Project Info</h1>
+<p><b>Folder:</b> <code>E:\Dev\Windows-MCP</code> <b>Repository:</b> <a href="https://github.com/FriesianLogic/Windows-MCP.git" target="_blank" rel="noopener">https://github.com/FriesianLogic/Windows-MCP.git</a> (GitHub repos under FriesianLogic are private unless noted) <b>Visibility:</b> Public fork (confirmed via GitHub) <b>Last updated:</b> 2026-11-03 (draft generated from the folder; review and correct)</p>
+<h2 id="summary">Summary</h2>
+<ul><li>This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</li><li>## Project Overview</li><li>Windows-MCP is a Python MCP (Model Context Protocol) server that bridges AI LLM agents with the Windows OS, enabling direct desktop automation. It exposes 16 tools (App, Shell, Screenshot, Snapshot, Click, Type, Scroll, Move, Shortcut, Wait, Scrape, MultiSelect, MultiEdit, Clipboard, Process, Notifi</li><li>## Build &amp; Development Commands</li><li>```bash</li><li>uv sync                    # Install dependencies</li><li>Source: CLAUDE.md</li></ul>
+<h2 id="facts-found-in-the-folder">Facts found in the folder</h2>
+<div class="tw"><table class="dt"><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>Files (depth 3, build folders ignored)</td><td>140</td></tr><tr><td>Main file types</td><td>.py (93), .md (20), .log (5), .txt (5), .png (4), .yml (4)</td></tr><tr><td>Most recent file change</td><td>2026-10-31</td></tr><tr><td>Latest commit</td><td>2026-07-06 - chore: nightly check-in 2026-07-06</td></tr><tr><td>Top-level folders</td><td>.claude, .github, .remember, .tau, assets, docs, node_modules, src, tests</td></tr><tr><td>Top-level files</td><td>.gitignore, .mcpbignore, CLAUDE.md, Commands.md, CONTRIBUTING.md, Features.md, Goals.md, LICENSE.md, manifest.json, pyproject.toml, README.md, SECURITY.md, server.json, Specifications.md, TestCases.md</td></tr></tbody></table></div>
+<h2 id="status">Status</h2>
+<ul><li>Not yet recorded. Fill in version, deployment and next steps here.</li></ul>
+<h2 id="key-decisions">Key Decisions</h2>
+<ul><li>(none recorded yet)</li></ul>
+<h2 id="web-and-cloud-services-auto-cataloged-2026-11-08">Web and cloud services (auto-cataloged 2026-11-08)</h2>
+<p>Found by scanning this folder's files. Nothing here was checked live. This block is regenerated by <code>E:\Dev\DevOps\allprojects\firstpass.py</code>; put your own notes outside it.</p>
+<p>No web-published service or cloud configuration found in this folder. Not recorded.</p>
+<p>Deploy dates, hosting accounts and what is live right now: Not recorded. &lt;!-- AUTO:WEBCLOUD END --&gt;</p>
+<h2 id="setup-requirements-auto-detected-2026-11-08">Setup requirements (auto-detected 2026-11-08)</h2>
+<p>Detected from files in this folder. This block is regenerated by <code>E:\Dev\DevOps\allprojects\firstpass.py</code>; put your own notes outside it.</p>
+<ul><li><code>pyproject.toml</code> present at project root</li></ul>
+<p>Required accounts, API keys (names only, never values), OS and tool versions: Not recorded unless listed above. &lt;!-- AUTO:SETUP END --&gt;</p><div class="foot">Rendered from ProjectInfo.md (last edited 2026-11-08 09:41) on 2026-11-08. Regenerate: gen-projectinfo-html.py</div></main></div><script>
+(function(){
+if(location.search.indexOf('embed=1')>=0)document.body.classList.add('embed');
+var q=document.getElementById('q'),cnt=document.getElementById('cnt');
+function run(){var v=q.value.toLowerCase().trim(),n=0,tot=0;
+document.querySelectorAll('table.dt tbody tr').forEach(function(r){tot++;var ok=!v||r.textContent.toLowerCase().indexOf(v)>=0;r.classList.toggle('hide',!ok);if(ok)n++});
+cnt.textContent=v?(n+' of '+tot+' rows match'):(tot+' rows')}
+q.addEventListener('input',run);run();
+document.querySelectorAll('table.dt th').forEach(function(th){th.addEventListener('click',function(){
+var t=th.closest('table'),i=Array.prototype.indexOf.call(th.parentNode.children,th),b=t.tBodies[0],
+rows=Array.prototype.slice.call(b.rows),d=th.dataset.d==='a'?-1:1;th.dataset.d=d===1?'a':'d';
+rows.sort(function(a,c){var x=a.cells[i].textContent.trim(),y=c.cells[i].textContent.trim(),nx=parseFloat(x),ny=parseFloat(y);
+return(!isNaN(nx)&&!isNaN(ny)?nx-ny:x.localeCompare(y,undefined,{numeric:true}))*d});
+rows.forEach(function(r){b.appendChild(r)})})});
+})();
+</script></body></html>
