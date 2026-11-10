@@ -1,5 +1,12 @@
 # CLAUDE.md
 
+<!-- AUTO:CENTRALCLAUDE START -->
+## Attached to the central Claude.md (no exceptions)
+
+This project is attached to the central Claude.md: `E:\Dev\Claude\CLAUDE.md`, together with `E:\Dev\Claude\GlobalRules.md`. At the start of every session read those two files first and follow them (GR-20), then the rest of this file, which adds only project-specific rules. Every rule in them applies here in full. Resource parent directory: `E:\Dev` (GR-22). Do not point to any other location for the main Claude.md.
+<!-- AUTO:CENTRALCLAUDE END -->
+
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview

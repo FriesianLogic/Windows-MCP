@@ -47,3 +47,9 @@
 - Mark tasks done here before every commit.
 - After major feature work, add tasks to review UseCases.md and TestCases.md.
 - Codie (peer reviewer) must approve all code before tasks are marked ✅ Done.
+
+## Command log - 2026-11-09 (ProjectInfo global-rules sync)
+
+| Date | Command | Result |
+|---|---|---|
+| 2026-11-09 | "go through every project in Dev, and make sure the ProjectInfo knows about the global rules and all things in E:\Dev\Claude\CLAUDE.md" (the central Claude.md); then: "correct my actions everywhere to point to the proper main Claude.md in all projects"; "every project should be attached to the central Claude.md file - no exceptions"; "that is a standard rule on every project and ensure it done also when scaffolding" (saved as global rule GR-51; newproject skill updated); "remember that" (saved to Claude memory) | Added/refreshed the "Global rules and Claude workspace conventions" block in ProjectInfo.md (GR rules + E:\Dev\Claude\CLAUDE.md rules); ProjectInfo.html re-rendered where auto-generated. Backups: *.bak-20261109-grinfo. Script: E:\Dev\DevOps\allprojects\sync-projectinfo-globalrules.py |
