@@ -53,3 +53,6 @@
 | Date | Command | Result |
 |---|---|---|
 | 2026-11-09 | "go through every project in Dev, and make sure the ProjectInfo knows about the global rules and all things in E:\Dev\Claude\CLAUDE.md" (the central Claude.md); then: "correct my actions everywhere to point to the proper main Claude.md in all projects"; "every project should be attached to the central Claude.md file - no exceptions"; "that is a standard rule on every project and ensure it done also when scaffolding" (saved as global rule GR-51; newproject skill updated); "remember that" (saved to Claude memory) | Added/refreshed the "Global rules and Claude workspace conventions" block in ProjectInfo.md (GR rules + E:\Dev\Claude\CLAUDE.md rules); ProjectInfo.html re-rendered where auto-generated. Backups: *.bak-20261109-grinfo. Script: E:\Dev\DevOps\allprojects\sync-projectinfo-globalrules.py |
+| GR-50 global-rules recheck (gr53-rollout) 2026-11-14 19:06 | **Done.** first read: 53 rules recorded |
+| GR-50 global-rules recheck (gr54-56-rollout) 2026-11-14 19:26 | **Done.** new GR-54, GR-55, GR-56; files edited: GlobalRules.md, AGENTS.md, CLAUDE.md -> APPLY to the project now |
+| GR-50 global-rules recheck (gr57-rollout) 2026-11-14 20:52 | **Done.** new GR-57; files edited: GlobalRules.md, AGENTS.md, CLAUDE.md -> APPLY to the project now |

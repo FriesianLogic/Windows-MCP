@@ -4,6 +4,8 @@
 ## Attached to the central Claude.md (no exceptions)
 
 This project is attached to the central Claude.md: `E:\Dev\Claude\CLAUDE.md`, together with `E:\Dev\Claude\GlobalRules.md`. At the start of every session read those two files first and follow them (GR-20), then the rest of this file, which adds only project-specific rules. Every rule in them applies here in full. Resource parent directory: `E:\Dev` (GR-22). Do not point to any other location for the main Claude.md.
+
+**Standard 3-step workflow on EVERY request (GR-57, no exceptions):** (1) CHECKLIST - first action: list every task in the message as a numbered checklist and work all of them to the end without stopping (GR-54). (2) HISTORY - before starting, read this project's `ChatHistory\ChatHistory.md` for open items, missed tasks and lessons and run anything missed in the background without asking (GR-55/56); append to it after each completed task. (3) VERIFY - before finishing, check each item against evidence and end with a pass/fail line per numbered item; list anything not done with a 'Fix It All' option.
 <!-- AUTO:CENTRALCLAUDE END -->
 
 
