@@ -14,7 +14,7 @@ more. It's the bridge between Claude's reasoning and the user's actual Windows e
 **Why it exists:** To enable Claude (and other MCP-compatible AI agents) to autonomously operate
 Windows applications on the user's behalf — automating workflows that can't be handled through
 APIs alone. Within the FriesianLogic ecosystem, it's the desktop-control backbone for
-AI-Cortana and general Cowork automation.
+Cortana and general Cowork automation.
 
 ---
 
