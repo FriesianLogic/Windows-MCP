@@ -257,3 +257,11 @@ Chat history is how Claude avoids repeat mistakes (extends GR-53). (1) At the ST
 Testing management switch (GR-59): each current Friesian Logic app (HorseAge, HealthLive, Jigsaw3D, RainDrops, SnoopGuard, AppScout) has an ON/OFF switch for comprehensive testing management, kept in E:\Dev\Claude\TestSwitches.json and shown in the project's ProjectTestManager.md (section 0) and on its dashboard. When a project's switch is ON, Claude ASKS Bill, at the start of work in that project (with the GR-56 history read) and at most once per interval (default once per day), whether to run that project's test management suite (ProjectTestManager.md plan, E:\Dev\TestManager.md rules, TestAutomation kit; GR-41/43/44/46/47). Procedure: run `python E:\Dev\Claude\testswitch.py due <project>`; if it prints DUE, ask one short question (run now / not now / snooze N days / turn off); then record the answer with `testswitch.py asked <project> ran|declined|snoozed [days]`. Never run the suite without his yes. When OFF, do not prompt. Bill flips it by saying 'testing on/off for <project>' (Claude runs `testswitch.py on|off <project>`, which refreshes ProjectTestManager.md and the dashboards). New Friesian Logic apps get the switch added (add to TestSwitches.json, run `testswitch.py sync`). If a project dashboard is regenerated, re-run `testswitch.py sync` to restore the switch banner.
 
 <!-- AUTO:GLOBALRULES END -->
+
+## Test runs (Test Manager)
+
+Registered in E:\Dev\TestManager.md (GR-41).
+- 2026-11-20 22:27: TM-195 started: WorkPlan driver: offline unit test suite (pytest) to populate TestCases.md (ports n/a, launcher n/a)
+- 2026-11-20 22:27: TM-195 ended: finished, exit code 1
+- 2026-11-20 22:27: TM-197 started: WorkPlan driver: offline unit test suite (pytest, retry without ruff) (ports n/a, launcher n/a)
+- 2026-11-20 22:27: TM-197 ended: finished, exit code 1

@@ -13,7 +13,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Windows-MCP is a Python MCP (Model Context Protocol) server that bridges AI LLM agents with the Windows OS, enabling direct desktop automation. It exposes 16 tools (App, Shell, Screenshot, Snapshot, Click, Type, Scroll, Move, Shortcut, Wait, Scrape, MultiSelect, MultiEdit, Clipboard, Process, Notification) via FastMCP.
+Windows-MCP is a Python MCP (Model Context Protocol) server that bridges AI LLM agents with the Windows OS, enabling direct desktop automation. It exposes 20 tools (App, DisplayInventory, PowerShell, FileSystem, Snapshot, Screenshot, Click, Type, Scroll, Move, Shortcut, Wait, WaitFor, Scrape, MultiSelect, MultiEdit, Clipboard, Process, Notification, Registry) via FastMCP. Tool count verified against `src/windows_mcp/tools/*.py` on 2026-11-20.
 
 ## Build & Development Commands
 
@@ -27,13 +27,17 @@ pytest                     # Run all tests (if tests/ exists)
 pytest tests/test_foo.py   # Run a single test file
 ```
 
-**Package manager**: UV (not pip). **Python**: 3.13+. **Build backend**: Hatchling.
+**Package manager**: UV (not pip). **Python**: 3.12+ (`requires-python = ">=3.12"`; dev uses 3.13). **Build backend**: setuptools (`setuptools.build_meta`).
 
 ## Architecture
 
 The codebase follows a layered service architecture under `src/windows_mcp/`:
 
-**Entry point** — `__main__.py`: Registers all 15 MCP tools on a FastMCP server instance. Uses an async lifespan to initialize Desktop, WatchDog, and Analytics services. Each tool function delegates to `Desktop` methods. The `@with_analytics` decorator wraps tools for telemetry.
+**Entry point** — `__main__.py`: Click CLI group `main` with subcommands `serve` (run the server; transport stdio/sse/streamable-http, host/port, auth key, IP allowlist, CORS, TLS, OAuth, `--tools`/`--exclude-tools` filters, `--stateless-http`, `--debug`, `--config`), `install`/`uninstall` (register/remove a Windows startup task via schtasks/PowerShell) and `auth` (set up HTTP auth, optional self-signed TLS). `_build_mcp()` creates the FastMCP instance with an async lifespan that initializes Desktop, WatchDog and Analytics, then calls `tools.register_all()`.
+
+**Tools package** — `tools/`: one module per tool group (`app`, `display`, `shell`, `filesystem`, `snapshot`, `input`, `scrape`, `multi`, `clipboard`, `process`, `notification`, `registry`), each exposing `register(mcp, get_desktop=..., get_analytics=...)`. `tools/__init__.py:register_all` registers them in order. Tools resolve the Desktop/Analytics singletons lazily and are wrapped with `@with_analytics` for telemetry.
+
+**Service packages** — `filesystem/`, `registry/`, `process/`, `powershell/`, `notifications/`: thin services behind the matching tools. `infrastructure/`: `analytics.py` (PostHog), `auth.py` (bearer-token/OAuth middleware for HTTP transports), `oauth.py` (minimal OAuth 2.0 authorization server), `security.py` (SSRF protection and IP allowlist), `config.py`. `paths.py`: resolves Claude Desktop data directories for standard and MSIX (Store) installs.
 
 **Desktop service** — `desktop/service.py`: High-level orchestrator. Manages window operations (launch, resize, switch), screenshots, mouse/keyboard actions, and clipboard. Interfaces with Tree service for UI element discovery. `desktop/views.py` defines data models: `DesktopState`, `Window`, `Size`, `BoundingBox`, `Status`.
 
@@ -45,7 +49,7 @@ The codebase follows a layered service architecture under `src/windows_mcp/`:
 
 **Virtual Desktop Manager** — `vdm/core.py`: Tracks which windows belong to which Windows virtual desktop (Win10/11).
 
-**Analytics** — `analytics.py`: Optional PostHog telemetry (disabled with `ANONYMIZED_TELEMETRY=false` env var). Tracks tool names and errors only, not arguments or outputs.
+**Analytics** — `infrastructure/analytics.py`: Optional PostHog telemetry (disabled with `ANONYMIZED_TELEMETRY=false` env var). Tracks tool names and errors only, not arguments or outputs.
 
 ## Code Style
 
