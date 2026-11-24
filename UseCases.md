@@ -12,7 +12,7 @@
 
 | Actor | Description |
 |-------|-------------|
-| AI agent (MCP client) | Claude Desktop, Claude Code, Cortana or another MCP client that calls the tools to see and drive the PC |
+| AI agent (MCP client) | Claude Desktop, Claude Code, Elysia or another MCP client that calls the tools to see and drive the PC |
 | Operator (Bill) | Installs, configures and secures the server; decides which tools are enabled and whether HTTP access is allowed |
 | Remote client | Another device (for example a Pi or phone) that reaches the server over streamable HTTP with an auth key |
 

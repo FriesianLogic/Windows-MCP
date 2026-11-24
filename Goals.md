@@ -14,7 +14,7 @@ more. It's the bridge between Claude's reasoning and the user's actual Windows e
 **Why it exists:** To enable Claude (and other MCP-compatible AI agents) to autonomously operate
 Windows applications on the user's behalf — automating workflows that can't be handled through
 APIs alone. Within the FriesianLogic ecosystem, it's the desktop-control backbone for
-Cortana and general Cowork automation.
+Elysia and general Cowork automation.
 
 ---
 
@@ -67,7 +67,7 @@ unintended access.
 ## User Experiences
 
 **Hands-free automation:** Bill says "open my calendar and check tomorrow's meetings" —
-Cortana uses Windows-MCP to open the browser, navigate to Google Calendar, take a screenshot,
+Elysia uses Windows-MCP to open the browser, navigate to Google Calendar, take a screenshot,
 read the events, and speak them back.
 
 **AI-assisted file work:** Claude uses Windows-MCP to locate a file, open it in the right app,
